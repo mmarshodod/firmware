@@ -404,7 +404,7 @@ inline void stream(Adapter& adapter,const std::string& key,T * value,bool more)
 
     if(value != nullptr){
         adapter.serialize(T_OBJ_BEGIN);
-        value->serialize(adapter);
+        stream<T>(adapter, value);
         adapter.serialize(T_OBJ_END);
     }
     else{

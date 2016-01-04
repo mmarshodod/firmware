@@ -67,11 +67,7 @@ public:
 	    value = val;
 	}
 
-    void serialize(JSON::Adapter& adapter){
-        JSON::Class root(adapter, "TempSensorMock");
-        JSON_E(adapter, value);
-        JSON_T(adapter, connected);
-    }
+	virtual void serialize(JSON::Adapter& adapter){} // temporary work around for pure virtual function
 
 	private:
 	temp_t value;
